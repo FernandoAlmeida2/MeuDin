@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-native";
 import { styles } from "./styles";
 
 type Props = {
-  type: String;
+  type: string;
 };
 
 export default function Form({ type }: Props) {
@@ -18,6 +18,7 @@ export default function Form({ type }: Props) {
 
   const [isLoading, setLoading] = useState(false);
   const navigate = useNavigate();
+
 
   async function submitForm() {
     setLoading(true);
@@ -88,7 +89,9 @@ export default function Form({ type }: Props) {
         disabled={isLoading}
         onPress={submitForm}
       >
-        <Text style={styles(isLoading).text}>Continue</Text>
+        <Text style={styles(isLoading).text}>
+          {type === "Login" ? "Entrar" : "Cadastrar"}
+        </Text>
       </Pressable>
 
       <Spinner

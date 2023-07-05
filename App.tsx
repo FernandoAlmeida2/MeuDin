@@ -4,8 +4,23 @@ import { NativeRouter, Route, Routes } from "react-router-native";
 import Home from "./src/pages/Home/Home";
 import Login from "./src/pages/Login/Login";
 import SignUp from "./src/pages/SignUp/SignUp";
+import AppLoading from "expo-app-loading";
+import {
+  useFonts,
+  Raleway_400Regular,
+  Raleway_700Bold,
+} from "@expo-google-fonts/raleway";
 
 export default function App() {
+  const [fontsLoaded] = useFonts({
+    Raleway_400Regular,
+    Raleway_700Bold,
+  });
+
+  if (!fontsLoaded) {
+    return <AppLoading />;
+  }
+
   return (
     <NativeRouter>
       <View style={styles.container}>
@@ -24,7 +39,7 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#f99007",
+    backgroundColor: "#8C11BE",
     alignItems: "center",
     justifyContent: "center",
   },
