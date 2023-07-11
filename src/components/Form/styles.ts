@@ -30,9 +30,6 @@ export const styles = (isLoading: boolean) => {
       justifyContent: "center",
       fontFamily: "Raleway_700Bold",
     },
-    spinnerTextStyle: {
-      color: "#FFF",
-    },
     text: {
       fontFamily: "Raleway_700Bold",
       color: "#fff",

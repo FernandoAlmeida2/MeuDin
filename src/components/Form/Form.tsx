@@ -27,11 +27,10 @@ export default function Form({ type }: Props) {
 
   async function submitForm() {
     setLoading(true);
-    //navigate("/home");
+
     try {
       if (type === "Login") {
         const response = await signIn(bodyForm);
-        console.log(response);
         dispatch(changeName(response.data!.name));
         dispatch(changeToken(response.data!.token));
         //localStorage.setItem("userData", JSON.stringify(response.data));
@@ -107,7 +106,7 @@ export default function Form({ type }: Props) {
       <Spinner
         visible={isLoading}
         textContent={"Carregando..."}
-        textStyle={styles(isLoading).spinnerTextStyle}
+        textStyle={{color: "#FFF"}}
       />
     </View>
   );
