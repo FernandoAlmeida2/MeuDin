@@ -20,7 +20,10 @@ export const userSlice = createSlice({
     changeToken(state, action: PayloadAction<string>) {
       return { ...state, token: action.payload };
     },
+    logout() {
+      return initialState;
+    },
   },
 });
 
-export const { changeName, changeToken } = userSlice.actions;
+export const { changeName, changeToken, logout } = userSlice.actions;

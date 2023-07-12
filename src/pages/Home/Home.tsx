@@ -1,10 +1,11 @@
 import { useEffect, useState } from "react";
-import { Alert, Text, View } from "react-native";
+import { Alert, ScrollView, Text, View } from "react-native";
 import Spinner from "react-native-loading-spinner-overlay/lib";
 import { useSelector } from "react-redux";
-import { Link } from "react-router-native";
 import { RootState } from "../../../redux/store";
 import { getRecords, RecordType } from "../../../services/recordApi";
+import RecordsArea from "../../components/RecordsArea";
+import TextIcon from "../../components/TextIcon";
 import { styles } from "./styles";
 
 export default function Home() {
@@ -25,18 +26,13 @@ export default function Home() {
       .finally(() => setLoading(false));
   }, []);
 
+  if (isLoading)
+    return <Spinner visible={true} textContent={"Carregando registros..."} />;
+
   return (
     <View style={styles.container}>
-      <Link to="/signup">
-        <Text>
-          Bem vindo, {name}! Seu token é {token}
-        </Text>
-      </Link>
-      <Spinner
-        visible={isLoading}
-        textContent={"Carregando registros..."}
-        textStyle={{color: "#FFF"}}
-      />
+      <TextIcon text={`Olá, ${name}`} logoutIcon={true} />
+      <RecordsArea recordData={recordData} />
     </View>
   );
 }

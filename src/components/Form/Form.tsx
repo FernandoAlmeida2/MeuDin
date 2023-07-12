@@ -34,7 +34,6 @@ export default function Form({ type }: Props) {
         dispatch(changeName(response.data!.name));
         dispatch(changeToken(response.data!.token));
         //localStorage.setItem("userData", JSON.stringify(response.data));
-        Alert.alert("Successful Login!");
         navigate("/home");
       } else {
         const response = await signUp(bodyForm);
