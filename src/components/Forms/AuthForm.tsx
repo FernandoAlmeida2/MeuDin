@@ -77,6 +77,7 @@ export default function AuthForm({ type }: Props) {
         style={styles(isLoading).input}
         editable={!isLoading}
         selectTextOnFocus={!isLoading}
+        secureTextEntry={true}
       />
       {type !== "Login" && (
         <TextInput

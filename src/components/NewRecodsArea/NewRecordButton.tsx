@@ -20,10 +20,11 @@ const RecordButton = ({ isIncome }: Props) => {
         ) : (
           <AntDesign name="minuscircleo" size={24} color="white" />
         )}
+
+        <Text style={styles.text}>
+          {isIncome ? "Nova \nentrada" : "Nova  \nsaída"}
+        </Text>
       </Pressable>
-      <Text style={styles.text}>
-        {isIncome ? "Nova \nentrada" : "Nova  \nsaída"}
-      </Text>
     </View>
   );
 };
