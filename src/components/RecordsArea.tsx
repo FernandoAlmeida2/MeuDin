@@ -17,9 +17,7 @@ export default function RecordsArea({ recordData }: Props) {
           entrada ou saída
         </Text>
       ) : (
-        <ScrollView
-          contentContainerStyle={styles.recordsList}
-        >
+        <ScrollView contentContainerStyle={styles.recordsList}>
           {recordData.map((record) => (
             <Text key={record.id}>{record.amount}</Text>
           ))}
@@ -33,9 +31,8 @@ export const styles = StyleSheet.create({
   container: {
     backgroundColor: "#fff",
     width: 350,
-    height: 460,
+    height: 580,
     borderRadius: 10,
-    flex: 1,
     alignItems: "center",
     justifyContent: "center",
   },
@@ -50,5 +47,8 @@ export const styles = StyleSheet.create({
   },
   text: {
     textAlign: "center",
+    fontFamily: "Raleway_400Regular",
+    fontSize: 20,
+    color: "#868686",
   },
 });

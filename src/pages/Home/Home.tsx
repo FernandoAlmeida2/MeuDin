@@ -4,6 +4,7 @@ import Spinner from "react-native-loading-spinner-overlay/lib";
 import { useSelector } from "react-redux";
 import { RootState } from "../../../redux/store";
 import { getRecords, RecordType } from "../../../services/recordApi";
+import NewRecordsArea from "../../components/NewRecodsArea/NewRecordsArea";
 import RecordsArea from "../../components/RecordsArea";
 import TextIcon from "../../components/TextIcon";
 import { styles } from "./styles";
@@ -33,6 +34,7 @@ export default function Home() {
     <View style={styles.container}>
       <TextIcon text={`Olá, ${name}`} logoutIcon={true} />
       <RecordsArea recordData={recordData} />
+      <NewRecordsArea />
     </View>
   );
 }

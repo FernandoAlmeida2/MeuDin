@@ -4,7 +4,6 @@ import { StyleSheet } from "react-native";
 export const styles = (isLoading: boolean) => {
   return StyleSheet.create({
     view: {
-      display: "flex",
       alignItems: "center",
       justifyContent: "center",
       gap: 15,
