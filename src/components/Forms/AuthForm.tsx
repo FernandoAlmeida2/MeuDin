@@ -12,7 +12,7 @@ type Props = {
   type: string;
 };
 
-export default function Form({ type }: Props) {
+export default function AuthForm({ type }: Props) {
   const intialBodyState = {
     name: "",
     email: "",

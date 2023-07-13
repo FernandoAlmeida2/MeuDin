@@ -12,6 +12,7 @@ import {
 } from "@expo-google-fonts/raleway";
 import { Provider } from "react-redux";
 import { store } from "./redux/store";
+import NewRecord from "./src/pages/NewRecord/NewRecord";
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -31,6 +32,7 @@ export default function App() {
             <Route path="/" Component={Login} />
             <Route path="/signup" Component={SignUp} />
             <Route path="/home" Component={Home} />
+            <Route path="/record/:type" Component={NewRecord} />
           </Routes>
 
           <StatusBar style="auto" />

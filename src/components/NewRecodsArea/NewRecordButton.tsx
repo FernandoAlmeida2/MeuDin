@@ -9,7 +9,8 @@ type Props = {
 const RecordButton = ({ isIncome }: Props) => {
   const navigate = useNavigate();
   function onPress() {
-    navigate("/");
+    if (isIncome) navigate("/record/Income");
+    else navigate("/record/Expense");
   }
   return (
     <View style={styles.button}>
