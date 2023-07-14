@@ -4,18 +4,20 @@ import Spinner from "react-native-loading-spinner-overlay/lib";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-native";
 import { RootState } from "../../../redux/store";
-import { saveRecord } from "../../../services/recordApi";
+import { updateRecord } from "../../../services/recordApi";
 import { styles } from "./styles";
 
 type Props = {
+  amount: number;
+  description: string;
   type: "Income" | "Expense";
+  id: number;
 };
 
-export default function NewRecordForm({ type }: Props) {
+export default function UpdateRecordForm({ amount, description, type, id }: Props) {
   const intialBodyState = {
-    amount: "",
-    description: "",
-    type,
+    amount: (amount / 100).toFixed(2).replace(".", ","),
+    description,
   };
   const [bodyForm, setBodyForm] = useState(intialBodyState);
 
@@ -27,7 +29,8 @@ export default function NewRecordForm({ type }: Props) {
     setLoading(true);
 
     try {
-      await saveRecord(
+      await updateRecord(
+        id,
         {
           ...bodyForm,
           amount: Math.round(Number(bodyForm.amount.replace(",", ".")) * 100),
@@ -70,7 +73,7 @@ export default function NewRecordForm({ type }: Props) {
         onPress={submitForm}
       >
         <Text style={styles(isLoading).text}>
-          {type === "Income" ? "Salvar entrada" : "Salvar saída"}
+          {type === "Income" ? "Atualizar entrada" : "Atualizar saída"}
         </Text>
       </Pressable>
 
