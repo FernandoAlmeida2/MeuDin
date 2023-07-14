@@ -69,6 +69,9 @@ export default function AuthForm({ type }: Props) {
         style={styles(isLoading).input}
         editable={!isLoading}
         selectTextOnFocus={!isLoading}
+        keyboardType="email-address"
+        autoCapitalize="none"
+        autoCorrect={false}
       />
       <TextInput
         placeholder="Senha"
