@@ -1,6 +1,6 @@
 import dayjs from "dayjs";
 import { StyleSheet, Text, View } from "react-native";
-import { RecordType } from "../../../services/recordApi";
+import { RecordType } from "../../services/recordApi";
 
 type Props = {
   sumBalance: number;

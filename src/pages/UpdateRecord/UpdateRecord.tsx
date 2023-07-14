@@ -1,7 +1,7 @@
 import { View } from "react-native";
 import { useSelector } from "react-redux";
 import { useParams } from "react-router-native";
-import { RootState } from "../../../redux/store";
+import { RootState } from "../../redux/store";
 import UpdateRecordForm from "../../components/Forms/UpdateRecordForm";
 import TextIcon from "../../components/TextIcon";
 import { styles } from "./styles";

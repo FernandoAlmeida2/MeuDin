@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import { Alert, ScrollView, Text, View } from "react-native";
+import { Alert, View } from "react-native";
 import Spinner from "react-native-loading-spinner-overlay/lib";
 import { useSelector } from "react-redux";
-import { RootState } from "../../../redux/store";
-import { getRecords, RecordType } from "../../../services/recordApi";
+import { RootState } from "../../redux/store";
+import { getRecords, RecordType } from "../../services/recordApi";
 import NewRecordsArea from "../../components/NewRecodsArea/NewRecordsArea";
 import RecordsArea from "../../components/HomeRecords/RecordsArea";
 import TextIcon from "../../components/TextIcon";

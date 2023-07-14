@@ -1,18 +1,18 @@
 import dayjs from "dayjs";
 import { Alert, Pressable, StyleSheet, Text, View } from "react-native";
-import { deleteRecord, RecordType } from "../../../services/recordApi";
+import { deleteRecord, RecordType } from "../../services/recordApi";
 import { AntDesign } from "@expo/vector-icons";
 import Spinner from "react-native-loading-spinner-overlay/lib";
 import { useState } from "react";
 import { useSelector } from "react-redux";
-import { RootState } from "../../../redux/store";
+import { RootState } from "../../redux/store";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-native";
 import {
   changeAmount,
   changeDescription,
   changeType,
-} from "../../../redux/recordSlice";
+} from "../../redux/recordSlice";
 
 type Props = {
   record: RecordType;

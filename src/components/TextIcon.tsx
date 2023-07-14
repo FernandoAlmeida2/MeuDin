@@ -2,7 +2,7 @@ import { Pressable, StyleSheet, Text, View } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 import { useNavigate } from "react-router-native";
 import { useDispatch } from "react-redux";
-import { logout } from "../../redux/userSlice";
+import { logout } from "../redux/userSlice";
 
 type Props = {
   text: string;

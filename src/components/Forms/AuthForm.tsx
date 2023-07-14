@@ -3,9 +3,9 @@ import { TextInput, Pressable, View, Text, Alert } from "react-native";
 import Spinner from "react-native-loading-spinner-overlay/lib";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-native";
-import { changeName, changeToken } from "../../../redux/userSlice";
-import { signIn } from "../../../services/authApi";
-import { signUp } from "../../../services/userApi";
+import { changeName, changeToken } from "../../redux/userSlice";
+import { signIn } from "../../services/authApi";
+import { signUp } from "../../services/userApi";
 import { styles } from "./styles";
 
 type Props = {

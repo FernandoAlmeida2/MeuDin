@@ -11,7 +11,7 @@ import {
   Raleway_700Bold,
 } from "@expo-google-fonts/raleway";
 import { Provider } from "react-redux";
-import { store } from "./redux/store";
+import { store } from "./src/redux/store";
 import NewRecord from "./src/pages/NewRecord/NewRecord";
 import UpdateRecord from "./src/pages/UpdateRecord/UpdateRecord";
 

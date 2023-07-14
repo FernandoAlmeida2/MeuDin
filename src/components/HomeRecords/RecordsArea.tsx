@@ -1,5 +1,5 @@
 import { ScrollView, Text, View } from "react-native";
-import { RecordType } from "../../../services/recordApi";
+import { RecordType } from "../../services/recordApi";
 import { StyleSheet } from "react-native";
 import DataRow from "./DataRow";
 import ResultRow from "./ResultRow";

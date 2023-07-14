@@ -1,5 +1,5 @@
 import axios from "axios";
-import { BASE_URL } from "../constants/urls";
+import { BASE_URL } from "../../constants/urls";
 import { ServiceResponse } from "./serviceResponse";
 
 export type RecordType = {

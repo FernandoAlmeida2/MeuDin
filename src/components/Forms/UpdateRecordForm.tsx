@@ -3,8 +3,8 @@ import { TextInput, Pressable, View, Text, Alert } from "react-native";
 import Spinner from "react-native-loading-spinner-overlay/lib";
 import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-native";
-import { RootState } from "../../../redux/store";
-import { updateRecord } from "../../../services/recordApi";
+import { RootState } from "../../redux/store";
+import { updateRecord } from "../../services/recordApi";
 import { styles } from "./styles";
 
 type Props = {
