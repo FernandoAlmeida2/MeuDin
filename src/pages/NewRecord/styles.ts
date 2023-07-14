@@ -6,6 +6,6 @@ export const styles = StyleSheet.create({
       flex: 1,
       paddingTop: 50,
       alignItems: "center",
-      gap: 20
+      gap: 50
     },
   });

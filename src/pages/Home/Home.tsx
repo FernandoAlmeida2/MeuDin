@@ -14,6 +14,11 @@ export default function Home() {
   const initialRecord: RecordType[] = [];
   const [recordData, setRecordData] = useState(initialRecord);
   const [isLoading, setLoading] = useState(false);
+  const [refreshSwitch, setRefreshSwitch] = useState(false);
+
+  function refreshRecords() {
+    setRefreshSwitch(!refreshSwitch);
+  }
 
   useEffect(() => {
     setLoading(true);
@@ -25,15 +30,21 @@ export default function Home() {
         console.log(error);
       })
       .finally(() => setLoading(false));
-  }, []);
+  }, [refreshSwitch]);
 
   if (isLoading)
-    return <Spinner visible={true} textContent={"Carregando registros..."} />;
+    return (
+      <Spinner
+        visible={true}
+        textContent={"Carregando registros..."}
+        textStyle={{color: "#FFF"}}
+      />
+    );
 
   return (
     <View style={styles.container}>
       <TextIcon text={`Olá, ${name}`} logoutIcon={true} />
-      <RecordsArea recordData={recordData} />
+      <RecordsArea recordData={recordData} refreshRecords={refreshRecords}/>
       <NewRecordsArea />
     </View>
   );

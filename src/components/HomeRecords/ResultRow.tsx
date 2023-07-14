@@ -14,7 +14,7 @@ const ResultRow = ({ sumBalance }: Props) => {
       <Text
         style={[
           styles.sumText,
-          sumBalance < 0 ? styles.positiveSum : styles.negativeSum,
+          sumBalance >= 0 ? styles.positiveSum : styles.negativeSum,
         ]}
       >
         {sumBalance.toFixed(2).replace(".", ",")}

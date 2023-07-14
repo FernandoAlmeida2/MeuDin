@@ -10,7 +10,7 @@ export type RecordType = {
   createdAt: string;
 };
 
-type SaveRecordBody = Omit<RecordType, "id" | "createdAt">
+type SaveRecordBody = Omit<RecordType, "id" | "createdAt">;
 
 export async function getRecords(token: string) {
   const response = await axios.get<ServiceResponse<RecordType[]>>(
@@ -29,6 +29,19 @@ export async function saveRecord(data: SaveRecordBody, token: string) {
   const response = await axios.post<ServiceResponse<number>>(
     `${BASE_URL}/record`,
     data,
+    {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }
+  );
+
+  return response.data;
+}
+
+export async function deleteRecord(id: number, token: string) {
+  const response = await axios.delete<ServiceResponse<string>>(
+    `${BASE_URL}/record/${id}`,
     {
       headers: {
         Authorization: `Bearer ${token}`,

@@ -6,15 +6,16 @@ import ResultRow from "./ResultRow";
 
 type Props = {
   recordData: RecordType[];
+  refreshRecords: Function;
 };
 
-export default function RecordsArea({ recordData }: Props) {
+export default function RecordsArea({ recordData, refreshRecords }: Props) {
   const noData = recordData.length === 0;
   const sumBalance = recordData.reduce(
     (previous, current) =>
       current.type === "Income"
-        ? previous + Number(current.amount)
-        : previous - Number(current.amount),
+        ? previous + Number(current.amount) / 100
+        : previous - Number(current.amount) / 100,
     0
   );
 
@@ -29,7 +30,7 @@ export default function RecordsArea({ recordData }: Props) {
       ) : (
         <ScrollView contentContainerStyle={styles.recordsList}>
           {recordData.map((record) => (
-            <DataRow record={record} key={record.id} />
+            <DataRow record={record} key={record.id} refreshRecords={refreshRecords} />
           ))}
         </ScrollView>
       )}
@@ -43,6 +44,7 @@ export const styles = StyleSheet.create({
     backgroundColor: "#fff",
     width: 350,
     height: 580,
+    gap: 30,
     borderRadius: 10,
   },
   noContent: {
@@ -55,8 +57,7 @@ export const styles = StyleSheet.create({
   recordsList: {
     backgroundColor: "#fff",
     borderRadius: 10,
-    width: 350,
-    height: 480,
+    width: 350
   },
   text: {
     textAlign: "center",

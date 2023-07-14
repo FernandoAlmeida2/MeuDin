@@ -27,8 +27,10 @@ export default function NewRecordForm({ type }: Props) {
     setLoading(true);
 
     try {
-      await saveRecord({ ...bodyForm, amount: Number(bodyForm.amount) }, token);
-      Alert.alert(`Registro salvo com sucesso!`);
+      await saveRecord(
+        { ...bodyForm, amount: Math.round(Number(bodyForm.amount.replace(",", "."))*100)},
+        token
+      );
       navigate("/home");
     } catch (error) {
       Alert.alert(`Unable to ${type}`);
