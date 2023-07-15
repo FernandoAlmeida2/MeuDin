@@ -27,6 +27,7 @@ Front-end:<br/>
     <img src="https://img.shields.io/badge/Expo-1B1F23?style=for-the-badge&logo=expo&logoColor=white" height="22px" />
     <img src="https://img.shields.io/badge/axios%20-%2320232a.svg?&style=for-the-badge&color=informational" height="22px" />
     <img src="https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white" height="22px" />
+    <img src="https://img.shields.io/badge/Redux-593D88?style=for-the-badge&logo=redux&logoColor=white" height="22px" />
 </div>
 
 <br/>API:<br/>
