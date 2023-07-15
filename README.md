@@ -29,15 +29,16 @@ Front-end:<br/>
     <img src="https://img.shields.io/badge/React_Router-CA4245?style=for-the-badge&logo=react-router&logoColor=white" height="22px" />
 </div>
 
-<br/>Back-end:<br/>
+<br/>API:<br/>
 
 <div>
     <img src="https://img.shields.io/badge/C%23-239120?style=for-the-badge&logo=c-sharp&logoColor=white" height="22px"/>
     <img src="https://img.shields.io/badge/.NET-512BD4?style=for-the-badge&logo=dotnet&logoColor=white" height="22px" />
     <img src="https://img.shields.io/badge/PostgreSQL-316192?style=for-the-badge&logo=postgresql&logoColor=white" height="22px" />
+    <img src="https://img.shields.io/badge/Docker-2CA5E0?style=for-the-badge&logo=docker&logoColor=white" height="22px" />
 </div>
 
-## How to run
+## Como rodar o projeto
 
 1. Clone o repositório
 2. Instale as dependências
